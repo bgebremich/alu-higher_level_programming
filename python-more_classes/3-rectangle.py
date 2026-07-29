@@ -79,18 +79,19 @@ class Rectangle:
         """Calculates and returns the perimeter of the rectangle.
 
         Returns:
-            int: The perimeter of the rectangle, or 0 if width or height is 0.
+            int: The perimeter, or 0 if width or height is 0.
         """
         if self.__width == 0 or self.__height == 0:
             return 0
         return 2 * (self.__width + self.__height)
 
     def __str__(self):
-        """Returns a string representation of the rectangle with # characters.
+        """Returns a string of the rectangle with # characters.
 
         Returns:
-            str: The rectangle as a string, or empty string if width or height is 0.
+            str: The rectangle as a string, or empty string if 0.
         """
         if self.__width == 0 or self.__height == 0:
             return ""
-        return "\n".join("#" * self.__width for i in range(self.__height))
+        row = "#" * self.__width
+        return "\n".join(row for i in range(self.__height))
